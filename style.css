@@ -710,4 +710,30 @@ footer p {
     * {
         cursor: auto;
     }
+
+    /* Performance Optimizations for Mobile */
+    .glass {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(22, 23, 26, 0.95);
+    }
+
+    #navbar.scrolled {
+        backdrop-filter: none;
+        background: rgba(15, 16, 18, 0.98);
+    }
+
+    .eclipse-flames {
+        display: none;
+        /* Heavy blur filter causes severe lag */
+    }
+
+    .eclipse-aura-1,
+    .eclipse-aura-2,
+    .eclipse-aura-3 {
+        animation: none;
+        /* Disable continuous rotation on mobile */
+        border-color: rgba(255, 255, 255, 0.1);
+        filter: none;
+    }
 }

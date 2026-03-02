@@ -35,11 +35,21 @@ interactables.forEach(el => {
 });
 
 const navbar = document.getElementById('navbar');
+let lastScrollY = window.scrollY;
+let ticking = false;
+
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            if (lastScrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            ticking = false;
+        });
+        ticking = true;
     }
 });
 
@@ -78,7 +88,8 @@ if (canvas) {
         height = canvas.height = window.innerHeight;
         particles = [];
         shootingStars = [];
-        const numParticles = Math.min(width > 768 ? 100 : 50, 150);
+        // Dramatically reduce particles on mobile to improve performance
+        const numParticles = width > 768 ? 100 : 15;
 
         for (let i = 0; i < numParticles; i++) {
             particles.push({
@@ -118,8 +129,8 @@ if (canvas) {
             ctx.fill();
         });
 
-        // Shooting Stars Logic
-        if (Math.random() < 0.02 && shootingStars.length < 3) {
+        // Shooting Stars Logic - disabled on mobile for performance
+        if (width > 768 && Math.random() < 0.02 && shootingStars.length < 3) {
             const startX = Math.random() * width;
             shootingStars.push({
                 x: startX,
