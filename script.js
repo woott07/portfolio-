@@ -176,6 +176,7 @@ const closeBtn = document.querySelector('.close-modal');
 const modalTitle = document.getElementById('modal-title');
 const modalDesc = document.getElementById('modal-desc');
 const modalTags = document.getElementById('modal-tags');
+const modalLink = document.getElementById('modal-link');
 const projectCards = document.querySelectorAll('.project-card');
 
 projectCards.forEach(card => {
@@ -189,6 +190,15 @@ projectCards.forEach(card => {
             span.textContent = tag.trim();
             modalTags.appendChild(span);
         });
+        const link = card.getAttribute('data-link');
+        if (link && modalLink) {
+            modalLink.href = link;
+            modalLink.style.display = 'inline-flex';
+            modalLink.innerHTML = '<i data-feather="external-link"></i> Live Demo';
+            feather.replace();
+        } else if (modalLink) {
+            modalLink.style.display = 'none';
+        }
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     });

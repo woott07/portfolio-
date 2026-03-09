@@ -673,6 +673,32 @@ footer p {
     font-weight: 500;
 }
 
+.modal-live-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    background: var(--accent);
+    border: 1px solid rgba(101, 132, 165, 0.4);
+    transition: var(--transition);
+}
+
+.modal-live-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(101, 132, 165, 0.25);
+}
+
+.modal-live-btn i {
+    width: 16px;
+    height: 16px;
+}
+
 .reveal,
 .transform-reveal {
     opacity: 0;
