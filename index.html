@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Sowel Rana | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Md Sowel Rana | Developer & Automator</title>
+    <meta name="description" content="Portfolio of Md Sowel Rana — Python developer, bot architect, and automation engineer. Turning repetitive problems into elegant solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="script.js" defer></script>
@@ -13,37 +16,58 @@
 
 <body>
     <div id="page-loader"></div>
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
     <div id="cursor-glow"></div>
 
     <nav id="navbar">
         <div class="nav-content">
-            <a href="#" class="logo">Md<span>.</span></a>
+            <a href="#" class="logo">
+                <span class="logo-bracket">[</span><span class="logo-name">Md</span><span class="logo-dot">.</span><span class="logo-bracket">]</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#about" class="nav-link"><span class="link-num">01.</span>About</a></li>
+                <li><a href="#skills" class="nav-link"><span class="link-num">02.</span>Skills</a></li>
+                <li><a href="#projects" class="nav-link"><span class="link-num">03.</span>Projects</a></li>
+                <li><a href="#contact" class="nav-link"><span class="link-num">04.</span>Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <header id="hero" class="section">
         <canvas id="hero-canvas"></canvas>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
         <div class="hero-content transform-reveal">
-            <h1>Md Rana</h1>
-            <p class="tagline">I Dlulu into Solulu.</p>
+            <div class="hero-badge">AVAILABLE FOR WORK</div>
+            <h1>
+                <div class="glitch-wrapper">
+                    <span class="glitch-text" data-text="Md Rana">Md Rana</span>
+                </div>
+                <span class="hero-name-accent">Developer & Automator</span>
+            </h1>
+            <p class="tagline"><span id="typed-text"></span><span class="tagline-cursor"></span></p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-outline">Get In Touch</a>
+            </div>
         </div>
         <div class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
+            <span>scroll</span>
         </div>
     </header>
 
     <main>
         <section id="about" class="section">
             <div class="container reveal">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title">
+                    <span class="title-accent">// who am i</span>
+                    <span class="title-text">About Me</span>
+                </h2>
                 <div class="about-wrapper">
                     <div class="about-graphic-container transform-reveal">
                         <div class="eclipse-wrapper">
@@ -54,31 +78,34 @@
                             <div class="eclipse-core">
                                 <i data-feather="cpu"></i>
                             </div>
+                            <div class="eclipse-dot eclipse-dot-1"></div>
+                            <div class="eclipse-dot eclipse-dot-2"></div>
                         </div>
                     </div>
 
                     <div class="about-content">
                         <p class="intro-text">
                             Probably automating something instead of touching grass.😭
+                            I build Python scripts, Discord bots, and automation tools that solve real problems — usually by making computers do the stuff humans hate doing.
                         </p>
 
                         <div class="about-grid">
-                            <div class="about-card glass">
+                            <div class="about-card transform-reveal">
                                 <i data-feather="code"></i>
                                 <h3>Python</h3>
-                                <p>I write scripts that do the boring stuff so I don’t have to.😞</p>
+                                <p>I write scripts that do the boring stuff so I don't have to.😞</p>
                             </div>
-                            <div class="about-card glass">
+                            <div class="about-card transform-reveal">
                                 <i data-feather="terminal"></i>
                                 <h3>Bots</h3>
                                 <p>Click a command. Something happens. I disappear.😠</p>
                             </div>
-                            <div class="about-card glass">
+                            <div class="about-card transform-reveal">
                                 <i data-feather="cpu"></i>
                                 <h3>Automation</h3>
                                 <p>Stop doing side quests. I patched the main mission.😎</p>
                             </div>
-                            <div class="about-card glass">
+                            <div class="about-card transform-reveal">
                                 <i data-feather="check-circle"></i>
                                 <h3>Challenge</h3>
                                 <p>Logic looking complicated until I bully it into working.😝</p>
@@ -91,46 +118,77 @@
 
         <section id="skills" class="section">
             <div class="container reveal">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Python</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="95%"></div>
+                <h2 class="section-title">
+                    <span class="title-accent">// what i use</span>
+                    <span class="title-text">Skills</span>
+                </h2>
+                <div class="skills-container">
+                    <div class="skills-left">
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-pct">95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-width="95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Discord Bots</span>
+                                    <span class="skill-pct">90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">APIs & Web Scraping</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">HTML / CSS</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-width="80%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Discord Bots</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>APIs</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>HTML / CSS</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="80%"></div>
+                    <div class="skills-right transform-reveal">
+                        <p class="intro-text" style="margin-bottom:1.5rem;">Technologies & tools I work with regularly:</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Discord.py</span>
+                            <span class="tech-tag">yt-dlp</span>
+                            <span class="tech-tag">BeautifulSoup</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">FFmpeg</span>
+                            <span class="tech-tag">REST APIs</span>
+                            <span class="tech-tag">Railway</span>
+                            <span class="tech-tag">Gunicorn</span>
+                            <span class="tech-tag">pandas</span>
+                            <span class="tech-tag">numpy</span>
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Git</span>
                         </div>
                     </div>
                 </div>
@@ -139,37 +197,43 @@
 
         <section id="projects" class="section">
             <div class="container reveal">
-                <h2 class="section-title">Projects</h2>
+                <h2 class="section-title">
+                    <span class="title-accent">// what i built</span>
+                    <span class="title-text">Projects</span>
+                </h2>
                 <div class="projects-grid">
-                    <div class="project-card glass" data-title="Omni Bot"
+                    <div class="project-card transform-reveal" data-title="Omni Bot"
                         data-desc="Gave discord admin powers and a personality. Custom commands go brrr. Logs so detailed it might start judging you."
-                        data-tags="Python, Discord.py, Automation, Spotify  , FFmpeg, Yt-dlp, APIs">
+                        data-tags="Python, Discord.py, Automation, Spotify, FFmpeg, Yt-dlp, APIs">
                         <div class="project-icon"><i data-feather="command"></i></div>
-                        <h3>Bot</h3>
+                        <h3>Omni Bot</h3>
                         <p>Advanced Discord moderation and utility bot.</p>
+                        <div class="project-arrow">↗</div>
                     </div>
-                    <div class="project-card glass" data-title="Data Pipeline"
+                    <div class="project-card transform-reveal" data-title="Data Pipeline"
                         data-desc="Fetch. Fix. Format. Vanish. Secure storage because paranoia is healthy. No humans were harmed in the process."
                         data-tags="Python, APIs, Automation, Data">
                         <div class="project-icon"><i data-feather="database"></i></div>
                         <h3>WebScraping</h3>
                         <p>Automated data extraction from websites.</p>
+                        <div class="project-arrow">↗</div>
                     </div>
-                    <div class="project-card glass" data-title="Task Automator"
+                    <div class="project-card transform-reveal" data-title="Task Automator"
                         data-desc="It runs in the background handling business. Files organizing themselves. Secure, silent, slightly overqualified."
-                        data-tags="Python, Scripting,numpy,pandas, Logic">
+                        data-tags="Python, Scripting, numpy, pandas, Logic">
                         <div class="project-icon"><i data-feather="layers"></i></div>
                         <h3>Task Automator</h3>
                         <p>File management and reporting utility.</p>
+                        <div class="project-arrow">↗</div>
                     </div>
-                    <div class="project-card glass" data-title="Universal Downloader"
+                    <div class="project-card transform-reveal" data-title="Universal Downloader"
                         data-desc="Paste a URL. Pick a type. Get the file. No storage, no fuss — just streams it straight to your browser. Supports 1000+ sites for video/audio, bulk image galleries, and full webpage image scraping. Powered by yt-dlp, gallery-dl, and BeautifulSoup4."
                         data-tags="Python, Flask, yt-dlp, gallery-dl, BeautifulSoup4, Gunicorn, Railway, HTML, CSS, JS"
                         data-link="https://web-dl-production.up.railway.app/">
                         <div class="project-icon"><i data-feather="download-cloud"></i></div>
                         <h3>Universal Downloader</h3>
-                        <p>Download anything — videos, audio, galleries, or scraped webpage images — from one clean UI.
-                        </p>
+                        <p>Download anything — videos, audio, galleries, or scraped webpage images — from one clean UI.</p>
+                        <div class="project-arrow">↗</div>
                     </div>
                 </div>
             </div>
@@ -177,45 +241,40 @@
 
         <section id="contact" class="section">
             <div class="container reveal">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title">
+                    <span class="title-accent">// let's talk</span>
+                    <span class="title-text">Get In Touch</span>
+                </h2>
                 <div class="contact-wrapper">
                     <div class="contact-info transform-reveal">
-                        <p class="intro-text">Feel free to reach out for collaborations or just a friendly hello. You
-                            can find me on these platforms:</p>
+                        <h3 class="contact-heading">Let's build something cool together.</h3>
+                        <p class="contact-subtext">Open to collaborations, freelance work, or just a friendly chat. Find me on these platforms:</p>
                         <div class="social-links">
-                            <a href="mailto:sowelra0786@gmail.com" class="social-btn glass" title="Email">
+                            <a href="mailto:sowelra0786@gmail.com" class="social-btn" title="Email">
                                 <i data-feather="mail"></i> <span>sowelra0786@gmail.com</span>
                             </a>
-                            <a href="https://discord.gg/CHYvuGNf" target="_blank" class="social-btn glass"
-                                title="garam_jalebi">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                            <a href="https://discord.gg/CHYvuGNf" target="_blank" class="social-btn" title="garam_jalebi">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
                                 </svg> <span>garam_jalebi</span>
                             </a>
-                            <a href="https://github.com/woott07" target="_blank" class="social-btn glass"
-                                title="woott007">
+                            <a href="https://github.com/woott07" target="_blank" class="social-btn" title="woott07">
                                 <i data-feather="github"></i> <span>woott07</span>
                             </a>
-                            <a href="https://www.instagram.com/butterchickenymm?igsh=MTBhc2ttMzh5M245NQ=="
-                                target="_blank" class="social-btn glass" title="butterchickenymm">
+                            <a href="https://www.instagram.com/butterchickenymm?igsh=MTBhc2ttMzh5M245NQ==" target="_blank" class="social-btn" title="butterchickenymm">
                                 <i data-feather="instagram"></i> <span>butterchickenymm</span>
                             </a>
-                            <a href="https://open.spotify.com/user/31svpbopc7fiovmyhqj7zq7kfjwu?si=2f59ef2f9ec04958"
-                                target="_blank" class="social-btn glass" title="Spotify">
+                            <a href="https://open.spotify.com/user/31svpbopc7fiovmyhqj7zq7kfjwu?si=2f59ef2f9ec04958" target="_blank" class="social-btn" title="Spotify">
                                 <i data-feather="music"></i> <span>Spotify</span>
                             </a>
-                            <a href="https://www.linkedin.com/in/md-sowel-rana-a686b83a6" target="_blank"
-                                class="social-btn glass" title="Md Sowel Rana">
+                            <a href="https://www.linkedin.com/in/md-sowel-rana-a686b83a6" target="_blank" class="social-btn" title="Md Sowel Rana">
                                 <i data-feather="linkedin"></i> <span>Md Sowel Rana</span>
                             </a>
                         </div>
                     </div>
 
-                    <form id="contact-form" class="glass transform-reveal"
+                    <form id="contact-form" class="transform-reveal"
                         action="https://formsubmit.co/sowelrana0786@gmail.com" method="POST">
-                        <!-- FormSubmit Configuration -->
                         <input type="hidden" name="_subject" value="New Portfolio Contact!">
                         <input type="hidden" name="_captcha" value="false">
 
@@ -229,24 +288,23 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required
-                                placeholder="Send me a message..."></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="What's on your mind..."></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="submit-btn">Send Message →</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="glass-footer">
+    <footer>
         <div class="container">
-            <p>&copy; <span id="year"></span> Md Rana. All rights reserved.</p>
+            <p>© <span id="year"></span> <span>Md Sowel Rana</span> — Built with ☕ & way too much automation.</p>
         </div>
     </footer>
 
     <div class="modal-overlay" id="project-modal">
-        <div class="modal-content glass">
+        <div class="modal-content">
             <button class="close-modal"><i data-feather="x"></i></button>
             <div class="modal-body">
                 <h3 id="modal-title">Project Title</h3>

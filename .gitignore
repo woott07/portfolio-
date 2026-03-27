@@ -1,0 +1,15 @@
+# Editor settings
+.vscode/
+
+# Python cache
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Node (just in case)
+node_modules/
